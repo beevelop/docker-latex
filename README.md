@@ -3,12 +3,6 @@
 
 LaTeX docker image for compiling latex files. Details of the package can be found on http://packages.ubuntu.com/xenial/texlive-full.
 
-## software verisons
-
-* Ubuntu:16.04
-* textlive-full(2015.20160320-1)
-* gnuplot
-
 ## Usage
 
 - Build image
@@ -17,30 +11,21 @@ LaTeX docker image for compiling latex files. Details of the package can be foun
 $ docker pull soleo/latex
 ``` 
 
-or 
-
-```shell
-$ docker build soleo/latex . 
-```
-
 - Compile LaTeX
 
 ```shell
-$ docker run --rm -v `pwd`:/mnt/src soleo/latex example.tex 
+# Assuming you main file is called "main.tex"
+$ docker run --rm -v `pwd`:/mnt/src beevelop/latex main 
 ```
 
 - Shortcut function for bash
 
 ```shell
-docker-latex() { docker run -v $PWD:/mnt/src --rm  soleo/latex:latest $@; return $?; }
+docker-latex() { docker run -v $PWD:/mnt/src --rm  beevelop/latex:latest $@; return $?; }
 ```
 
 add the function to your .bash_rc or .bash_profile
 
-## Feedback
-
-Feel free to fork it or send me PR to improve it.
-
 ## Credit
-> This repo / image is only a fork @soleo's original LaTeX image (https://github.com/soleo/docker-latex) adapted for my personal use cases and requirements.
+> This repo / image is only a fork @soleo's original LaTeX image (https://github.com/soleo/docker-latex) adapted for my personal use cases and requirements (Biber,...).
 
