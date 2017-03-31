@@ -40,3 +40,7 @@ add the function to your .bash_rc or .bash_profile
 ## Feedback
 
 Feel free to fork it or send me PR to improve it.
+
+## Credit
+> This repo / image is only a fork @soleo's original LaTeX image (https://github.com/soleo/docker-latex) adapted for my personal use cases and requirements.
+
