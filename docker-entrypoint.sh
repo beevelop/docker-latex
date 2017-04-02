@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+
+set -eax
+
 cd /mnt/src
 
-exec pdflatex --interaction nonstopmode "$@" && \
-exec biber "$@" && \
-exec pdflatex --interaction nonstopmode "$@" && \
-exec pdflatex --interaction nonstopmode "$@" && \
+pdflatex --interaction nonstopmode "$@" || true
+biber "$@"
+pdflatex --interaction nonstopmode "$@" || true
+pdflatex --interaction nonstopmode "$@" || true
 rm -f *.{aux,log,out}
