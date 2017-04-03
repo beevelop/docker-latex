@@ -2,8 +2,6 @@
 [![Pulls](https://shields.beevelop.com/docker/pulls/beevelop/latex.svg?style=flat-square)](https://links.beevelop.com/d-latex)
 [![Size](https://shields.beevelop.com/docker/image/size/beevelop/latex/latest.svg?style=flat-square)](https://links.beevelop.com/d-latex)
 [![Layers](https://shields.beevelop.com/docker/image/layers/beevelop/latex/latest.svg?style=flat-square)](https://links.beevelop.com/d-latex)
-![Badges](https://shields.beevelop.com/badge/badges-6-brightgreen.svg?style=flat-square)
-[![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
 # Docker with LaTeX
 
