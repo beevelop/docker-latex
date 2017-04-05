@@ -4,14 +4,14 @@ set -eax
 
 cd /mnt/src
 
-pdflatex --interaction nonstopmode "$@"
+texfot pdflatex --interaction nonstopmode "$@"
 
 # Optionally run Biber and Glossaries
-[ -z "$ENABLE_BIBER" ] && biber "$@"
-[ -z "$ENABLE_GLOSSARIES" ] && makeglossaries "$@"
+[ -v ENABLE_BIBER ] && biber "$@"
+[ -v ENABLE_GLOSSARIES ] && makeglossaries "$@"
 
-pdflatex --interaction nonstopmode "$@"
-pdflatex --interaction nonstopmode "$@"
+texfot pdflatex --interaction nonstopmode "$@"
+texfot pdflatex --interaction nonstopmode "$@"
 
 # Clean up temporary files
-rm -f *.{aux,log,out}
+[ -v ENABLE_CLEANUP ] && rm -f *.{aux,log,out,bbl,blg,acn,acr,alg,run.xml,toc,lot,lof,ist,idx,glo,glg,gls,bcf}

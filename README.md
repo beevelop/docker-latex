@@ -7,9 +7,14 @@
 
 > Simple image to automate LaTeX processing (e.g. for CI/CD stuff)
 
+This images runs `pdflatex` with [texfot](https://www.ctan.org/pkg/texfot) (to filter clutter from the output) once, optionally `Biber` and `makeglossaries`, `pdflatex` twice again and optionally cleans up.
+
+
 ## Configuration (ENVs)
 - `ENABLE_BIBER`: set to `true` to execute `biber "$@"` (default: disabled)
 - `ENABLE_GLOSSARIES`: set to `true` to run `makeglossaries "$@"` (default: disabled)
+- `ENABLE_CLEANUP`: set to `true` to clean up temporary files (default: disabled)
+  - Warning: deletes `*.{aux,log,out,bbl,blg,acn,acr,alg,run.xml,toc,lot,lof,ist,idx,glo,glg,gls,bcf}`! Use with caution.
 
 ## Usage
 ```bash
@@ -29,4 +34,4 @@ docker-latex() { docker run -e ENABLE_BIBER=true -e ENABLE_GLOSSARIES=true -v $P
 add the function to your `.bash_rc`, `.bash_profile` or `.zshenv`
 
 ## Credit
-> This repo / image is a fork of @soleo's original LaTeX image (see https://github.com/soleo/docker-latex) adapted for my personal use cases and requirements (Biber, Glossaries,...).
+> This repo / image is a fork of @soleo's original LaTeX image (see [soleo/docker-latex](https://github.com/soleo/docker-latex)) adapted for my personal use cases and requirements (Biber, Glossaries,...).
